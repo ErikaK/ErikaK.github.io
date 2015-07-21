@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>Move The Balls</title>
+		<meta charset="utf-8">
+		<script src="http://cloud.github.com/downloads/processing-js/processing-js/processing-1.4.1.min.js"></script>
+		<script type="text/processing" data-processing-target="mycanvas">
+ 		//This is where we code in JavaScript
+
+ 		var ball;
+ 		var listOfBalls = []; // empty list
+ 		var numBalls = random(75, 90);
+ 		var onmousedown="mouseDown()";
+
+ 		function mouseDown() {
+    		document.getElementById("Ball").style.color = "red";
+		}
+
+		function mouseUp() {
+    		document.getElementById("Ball").style.color = "green";
+		}
+
+ 		void setup(){
+ 			size(800,600);
+			background(148,136,219);
+			for(i = 0; i < numBalls; i++){
+				var newBallXPos = random(10, 700);
+				var newBallYPos = random(10, 500);
+				var newBall = new Ball(newBallXPos, newBallYPos); // make new ball
+				listOfBalls.push(newBall); // store ball in list
+			}
+
+ 		}
+
+ 		void draw(){
+ 			background(148, 136, 219);
+ 			for(i = 0; i < numBalls; i++){
+ 				var ball = listOfBalls[i]; // get a different ball
+ 				ball.drawBall(); // draw that ball
+ 				ball.moveBall();
+ 				ball.bounceBall();
+ 		}
+ 	}
+
+ 		class Ball{
+ 			//attributes
+ 			var xPos; //x location
+ 			var yPos;
+ 			var speedX;
+ 			var speedY;
+ 			var size;
+ 			var r;
+ 			var g;
+ 			var b;
+
+
+ 			//constructor
+ 			Ball(xPosition, yPosition){
+ 				xPos = xPosition;
+ 				yPos = yPosition;
+ 				speedX = random(2, 6);
+ 				speedY = random(2, 6);
+ 				size = random(15, 42);
+ 				r = random(150, 300);
+ 				g = random(80, 150);
+ 				b = random(50, 250);
+
+ 			}
+
+ 			//drawBall
+ 			void drawBall(){
+ 				fill(r, g, b);
+ 				ellipse(xPos, yPos, size, size);
+ 			}
+
+
+ 			//moveBall
+ 			void moveBall(){
+ 				//change xpos by xspeed
+ 				xPos = xPos + speedX;
+ 				yPos = yPos + speedY;
+ 			}
+
+ 			//bounceBall
+ 			void bounceBall(){
+ 				// if too far left or too far right
+ 				if(xPos < 0 || xPos > 800){
+ 					speedX = speedX * -1;
+ 				}
+ 				if(yPos < 0 || yPos > 600){
+ 					speedY = speedY * -1;
+ 				}
+ 			}
+ 		}
+
+ 		
+
+ 		
+
+		</script>
+	</head>
+	<body>
+		<id="Ball" onmousedown="mouseDown()" onmouseup="mouseUp()">
+		<canvas id="mycanvas"></canvas>
+	</body>
+</html>
