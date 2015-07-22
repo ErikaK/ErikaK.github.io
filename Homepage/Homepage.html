@@ -22,8 +22,30 @@
         <div data-role="page" id="pageOne">
          
                         <h1>Procrastination Destination</h1>
+
+                <script>   alert("Dear procrastinator, \nYou have 15 minutes to procrastinate!"); </script>
          
-                <div data-role="content" class="boxarea">           
+                <div data-role="content" class="boxarea">
+                 <p id="demo"> </p>
+
+                <form>
+                Procrastination time:<br>
+                <input type="text" name="username">
+                <br><br>  
+                <input type="submit" value="submit">
+                </form>
+
+                <script>
+                var oneMinuteLater = new Date();
+                    oneMinuteLater.setMinutes(oneMinuteLater.getMinutes() + 1);
+                    //console.log(oneMinuteLater + "hi");
+                    //console.log(firstTime + "wassup");
+                    if (oneMinuteLater == Date()){
+                        alert("Time's up");
+                    };
+
+                setTimeout(function(){alert("Time's up")},60000);
+                </script>           
                        
                 </div><!-- /content -->
                 <a href="#pageTwo">Games</a>
