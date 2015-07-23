@@ -1,5 +1,5 @@
 .ui-btn-inner{
-	background: #C2F0FF;
+	/*background: #C2F0FF;*/
 }
 
 audio {
@@ -9,3 +9,8 @@ audio {
 /*#pageThree{
 	left:50px;
 }*/
+
+.mytab {
+    width: 14.28% !important;  /* 12.5% for 8 tabs wide */
+    clear: none !important;  /* Prevent line break caused by ui-block-a */
+}

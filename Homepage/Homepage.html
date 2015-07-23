@@ -1,354 +1,236 @@
 <!DOCTYPE html>
 <html>
-        <head>
+    <head>
         <title>My Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="homepageStyle.css">
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" /> <!-- link to JS -->
-        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-</head>
-<style>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <style>
         #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix, 
         #pageSeven{
                 background-image: url("pebbles.jpg")
         }
-        /*.boxarea{
-                background: rgba(255, 255, 255, 0.5);*/
+        .boxarea{
+                background: rgba(255, 255, 255, 0.5);
         }
-</style>
-<body>
+    </style>
+    <body>
  
         <div data-role="page" id="pageOne">
          
-                        <h1>Procrastination Destination</h1>
+            <div data-role="header">                        
+            <h1>Procrastination Destination</h1>
+            <h2 id = "timer"></h2>
+              <div data-role="navbar">
+                <ul>
+                  <li class="mytab"><a href="#pageOne" class="ui-btn-active ui-state-persist">Home</a></li>
+                  <li class="mytab"><a href="#pageTwo">Games</a></li>
+                  <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                  <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                  <li class="mytab"><a href ="#pageFive">Pictures</a></li>
+                  <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                  <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                </ul>
+              </div>
+            </div>
+                
 
 
-                <script>   alert("Dear procrastinator, \nYou have 15 minutes to procrastinate!"); </script>
+            <script>   alert("Dear procrastinator, \nPlease input the amout you would like to procrastinate!"); </script>
 
          
-                <div data-role="content" class="boxarea">
-                 <p id="demo"> </p>
+            <div data-role="content" class="boxarea">
+                <label for="clear-demo"><b>Type in number of minutes you want to procrastinate here:</b></label>
+                <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" placeholder="example: 3">
+                <input type="button" value="Submit" data-theme="b" onclick="changeTime()">
+                
+            </div>
 
-                <form>
-                Procrastination time:<br>
-                <input type="text" name="username">
-                <br><br>  
-                <input type="submit" value="submit">
-                </form>
+            <script>
 
-                <script>
-                var oneMinuteLater = new Date();
-                    oneMinuteLater.setMinutes(oneMinuteLater.getMinutes() + 1);
+                var timehere = 0;
+
+                var changeTime = function(){
+                    var time = $("#clear-demo").val();
+                    timehere = Number(time);
+                    console.log(time);
+                    $("#timer").html(time + " minutes total on this site"); //home
+                    $("#timer2").html(time + " minutes total on this site"); //games
+                    $("#timer3").html(time + " minutes total on this site"); //
+                    $("#timer4").html(time + " minutes total on this site");
+                    $("#timer5").html(time + " minutes total on this site");
+                    $("#timer6").html(time + " minutes total on this site");
+                    $("#timer7").html(time + " minutes total on this site");
+
+                    startTimer();
+                }
+
+                var startTimer = function() {
+                    //var oneMinuteLater = new Date();
+                    //oneMinuteLater.setMinutes(oneMinuteLater.getMinutes() + timehere);
                     //console.log(oneMinuteLater + "hi");
                     //console.log(firstTime + "wassup");
-                    if (oneMinuteLater == Date()){
-                        alert("Time's up");
-                    };
+                    //if (oneMinuteLater == Date()){
+                      // alert("Time's up");
+                    //}; // for the things we submit to get in the timer
+                    setTimeout(function(){alert("Your " + timehere + " minute(s) is up!  Get back to work!")}, 60000 * timehere);
+                }
+               
 
-                setTimeout(function(){alert("Time's up")},60000);
-                </script>           
+                
+            </script>           
                        
-                </div><!-- /content -->
-                <a href="#pageTwo">Games</a>
-                <a href ="#pageThree">Songs</a>
-                <a href ="#pageFour">Jokes</a>
-                <a href ="#pageFive">Pictures</a>
-                <a href ="#pageSix">Fun Facts</a>
-                <a href ="#pageSeven">Recepies</a>
         </div><!-- /page -->
          
         <div data-role="page" id="pageTwo">
-                <div data-role+"header">
-                        <h1 id="title">Games</h1>
-                <body>
-                        Directions
+                <div data-role="header">
+                    <h1>Procrastination Destination</h1>
+                    <h2 id = "timer2"></h2>
+                    <div data-role="navbar">
+                        <ul>
+                            <li class="mytab"><a href="#pageOne">Home</a></li>
+                            <li class="mytab"><a href="#pageTwo" class="ui-btn-active ui-state-persist">Games</a></li>
+                            <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                            <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                            <li class="mytab"><a href ="#pageFive">Pictures</a></li>
+                            <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                            <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div data-role="content" class="boxarea">
-                        <p></p>
-                        <a href=></a>
-                        <img src=>
-                        <img src=>
-                        <img src=>
-                        <a href="#pageOne">Go Back</a>
-         
+                
+                    Directions
                 </div>
         </div>
 
         <div data-role="page" id="pageThree">
-                <div data-role+"header">
-                        <h1 id="title">Songs</h1>
+            <div data-role="header">
+                <h1>Procrastination Destination</h1>
+                <h2 id = "timer3"></h2>
+                <div data-role="navbar">
+                    <ul>
+                        <li class="mytab"><a href="#pageOne">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree"  class="ui-btn-active ui-state-persist">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                    </ul>
                 </div>
+            </div>
+
                 <div data-role="content" class="boxarea">
                         <p>Happy Songs!</p>
-                <audio controls>
-                        <!-- <a href=></a> -->
-                        <source src="I-Cant-Feel-My-Face.mp3" type="audio/mpeg">
-                </audio>.
+                        <audio controls>
+                            <source src="I-Cant-Feel-My-Face.mp3" type="audio/mpeg">
 
-                        <img src=>
-                        <img src=>
-                        <a href="#pageOne">Go Back</a>
-         
+                        </audio>.
                 </div>
         </div>
+
+
         <div data-role="page" id="pageFour">
-                 <div data-role+"header">
-                        <h1 id="title">Jokes</h1>
+            <div data-role="header">
+                <h1>Procrastination Destination</h1>
+                <h2 id = "timer4"></h2>
+                <div data-role="navbar">
+                    <ul>
+                        <li class="mytab"><a href="#pageOne">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour"  class="ui-btn-active ui-state-persist">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                    </ul>
                 </div>
+            </div>
                 <div data-role="content" class="boxarea">
                         <p>Funny Jokes!</p>
-                </div>   
-                        <div data-role="collapsible-set">
-                            <div data-role="collapsible">
-                                <h1><b>Q: What does a nosey pepper do?</b></h1> <p>A: Gets jalapeno business!</p>
-                            </div>
-                            <div data-role="collapsible">
-                                <h1><b>Q: What do you call a fake noodle?</b></h1> <p>A: An Impasta </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call an alligator in a vest?</b></h1> <p> A: An Investigator</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What happens if you eat yeast and shoe polish?</b></h1> <p> A: Every morning you'll rise and shine!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: "What's the difference between a guitar and a fish?"</b></h1> <p> A: "You can't tuna fish." </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Did you hear about the race between the lettuce and the tomato?</b></h1> <p> A: The lettuce was a "head" and the tomato was trying to "ketchup"!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What is it called when a cat wins a dog show?</b></h1> <p>A: A CAT-HAS-TROPHY!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why can't you give Elsa a balloon?</b></h1> <p>A: Because she will Let it go.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you get from a pampered cow?</b></h1> <p>A: Spoiled milk.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do lawyers wear to court?</b></h1> <p>A: Lawsuits!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What gets wetter the more it dries?</b> </h1> <p>A: A towel.
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you get if you cross a cat with a dark horse?</b></h1> <p>  A: Kitty Perry </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What did the pencile say to the other pencil?</b></h1> <p> A: your looking sharp.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What did Bacon say to Tomato?</b></h1> <p>  A: Lettuce get together! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What is the most hardworking part of the eye?</b></h1> <p>  A: the pupil</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: How do you make a tissue dance?</b></h1> <p>  A: Put a little boogey in it!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why did the picture go to jail?</b></h1> <p>  A: Because it was framed.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call security guards working outside Samsung shops?</b></h1> <p>  A: Guardians of the Galaxy.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you get when you cross fish and an elephant?</b></h1> <p> A: Swimming trunks.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Where do bees go to the bathroom?</b> </h1> <p> A: At the BP station! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call a baby monkey?</b></h1> <p>  A: A Chimp off the old block.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Who earns a living driving their customers away?</b></h1> <p>  A: A taxi driver.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What gets wetter the more it dries?</b></h1> <p>  A: A towel.</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you get if you cross a cat with a dark horse?</b></h1> <p>  A: Kitty Perry</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What did the pencile say to the other pencil?</b></h1> <p>  A: your looking sharp.</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What did Bacon say to Tomato?</b></h1> <p>  A: Lettuce get together!</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What is the most hardworking part of the eye?</b></h1> <p>  A: the pupil</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: How do you make a tissue dance?</b> </h1> <p> A: Put a little boogey in it! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why did the picture go to jail?</b></h1> <p>  A: Because it was framed.</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call security guards working outside Samsung shops?</b></h1> <p>  A: Guardians of the Galaxy.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you get when you cross fish and an elephant?</b></h1> <p>  A: Swimming trunks</p>. 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Where do bees go to the bathroom?</b> </h1> <p> A: At the BP station!</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call a baby monkey?</b></h1> <p>  A: A Chimp off the old block. </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Who earns a living driving their customers away?</b></h1> <p>  A: A taxi driver.</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: "How do you shoot a killer bee?"</b> </h1> <p> A: "With a bee bee gun."</p>
-                            <div data-role="collapsible">
-                            <h1><b>Q: How do you drown a Hipster?</b> </h1> <p> A: In the mainstream. </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: How do you make holy water?</b></h1> <p>  A: Boil the hell out of it!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What happened to the dog that swallowed a firefly?</b> </h1> <p> A: It barked with de-light! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What stays in the corner and travels all over the world?</b></h1> <p>  A: A stamp.</p> 
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why did the computer go to the doctor?</b> </h1> <p> A: Because it had a virus! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why are frogs so happy?</b> </h1> <p> A: They eat whatever bugs them </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q. What do you get when you cross a cow and a duck?</b> </h1> <p> A. Milk and quackers!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What did the leopard say after eating his owner?</b></h1> <p>  A: Man, that hit the "spot." </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call a sleeping bull?</b></h1> <p>  A: A bulldozer! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What is the tallest building in the world?</b></h1> <p>  A: The library! It has the most stories!</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: What do you call a belt with a watch on it?</b></h1> <p>  A: A waist of time</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why did the banana go to the Doctor?</b> </h1> <p> A: Because it was not peeling well</p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why is England the wettest country?</b> </h1> <p> A: Because the queen has reigned </p>there for years!
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why do fish live in salt water?</b></h1> <p>  A: Because pepper makes them sneeze! </p>
-                            </div>
-                            <div data-role="collapsible">
-                            <h1><b>Q: Why did the man put his money in the freezer?</b></h1> <p>  A: He wanted cold hard cash!</p>
-                            </div> 
-                        </div>
-
-                        <a href=></a>
-                        <a href="#pageOne">Go Back</a>
                 </div>
         </div>
+
         <div data-role="page" id="pageFive">
-                <div data-role+"header">
-                        <h1 id="title">Pictures</h1>
+            <div data-role="header">
+                <h1>Procrastination Destination</h1>
+                <h2 id = "timer5"></h2>
+                <div data-role="navbar">
+                    <ul>
+                        <li class="mytab"><a href="#pageOne">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" class="ui-btn-active ui-state-persist">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                    </ul>
                 </div>
+            </div>
                 <div data-role="content" class="boxarea">
                         <p>Funny pictures!</p>
                         <a href=></a>
                         <img src= >
                         <img src=>
                         <img src=>
-                        <a href="#pageOne">Go Back</a>
          
                 </div>
         </div>
-         <div data-role="page" id="pageSix">
-                <div data-role+"header">
-                        <h1 id="title">Fun facts</h1>
+
+        <div data-role="page" id="pageSix">
+
+            <div data-role="header">
+                <h1>Procrastination Destination</h1>
+                <h2 id = "timer6"></h2>
+                <div data-role="navbar">
+                    <ul>
+                        <li class="mytab"><a href="#pageOne">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" >Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix"class="ui-btn-active ui-state-persist">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                    </ul>
                 </div>
+            </div>
                 <div data-role="content" class="boxarea">
                         <p>Fun Facts!</p>
                         <a href=></a>
                         <!-- <img src=> 
                         <img src=>
                         <img src=> -->
-                        <a href="#pageOne">Go Back</a>
          
                 </div>
         </div>
+
         <div data-role="page" id="pageSeven">
-                <div data-role+"header">
-                        <h1 id="title">Recepies</h1>
+                <div data-role="header">
+                <h1>Procrastination Destination</h1>
+                <h2 id = "timer7"></h2>
+                <div data-role="navbar">
+                    <ul>
+                        <li class="mytab"><a href="#pageOne">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" >Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" class="ui-btn-active ui-state-persist">Recepies</a></li>
+                    </ul>
                 </div>
+            </div>
                 <div data-role="content" class="boxarea">
                         <p>Yummy Recepies!</p>
                         <a href=></a>
-                        <img src= >
-                        <img src=>
-                        <img src=>
-                        <a href="#pageOne">Go Back</a>
          
                 </div>
         </div>
  
-</body>
-<div data-role="page" id="pageThree" class = "music">
-                <div data-role+"header">
-                        <h1 id="title">Songs</h1>
-                </div>
-                <div data-role="content" class="boxarea">
-                        <p>Happy Songs!</p>
-                </div>
-                <p>I Can't Feel My Face by The Weeknd</p>
-                <audio controls>
-                        <source src="I-Cant-Feel-My-Face.mp3" type="audio/mpeg">
-                </audio>.
-                 <p>See You Again by Wiz Khalifa</p>
-                 <audio controls>
-                       <source src=" see you again.mp3 " type="audio/mpeg">
-                </audio>.
-                <p>Bad Blood by Taylor Swift</p>
-                 <audio controls>
-                        <source src="badblood.mp3 " type="audio/mpeg">
-                </audio>.
-                <p>Balilando by Enrique Iglesias</p>
-                 <audio controls>
-                        <source src="bailando.mp3" type="audio/mpeg">
-                </audio>.
-                <p>Cheerleader by Omi</p>
-                 <audio controls>
-                        <source src="cheerleader.mp3" type="audio/mpeg">
-                </audio>.
-                <p>Kal Ho Nah Ho by Sonu Nigam</p>
-                 <audio controls>
-                        <!-- <a href=></a> -->
-                        <source src="Kal.mp3 " type="audio/mpeg">
-                </audio>. 
-                <p>Love Me Like You Do by Ellie Golding</p>
-                <audio controls>
-                        <source src="lovemelikeyoudo.mp3 " type="audio/mpeg">
-                </audio>.
-                <p>Shut Up and Dance by Walk the Moon</p>
-                 <audio controls>
-                        <source src="shutupanddance.mp3 " type="audio/mpeg">
-                </audio>.
-                <p>Watch Me by Silento</p>
-                 <audio controls>
-                        <source src="silento.mp3" type="audio/mpeg">
-                </audio>.
-                <p>Trap Queen by Fetty Wap</p>
-                 <audio controls>
-                        <source src="trapqueen.mp3 " type="audio/mpeg">
-                </audio>.
-                    <a href="#pageOne">Go Back</a>
-         
-                </div>
-        </div>
+    </body>
 </html>
