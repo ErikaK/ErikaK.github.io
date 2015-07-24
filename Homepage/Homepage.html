@@ -9,6 +9,67 @@
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
         <script src="pictures.js"> </script>
+        <script>
+
+            var page = 1;
+            var timehere = 0;
+
+            var changeTime = function(){
+                var time = $("#clear-demo").val();
+                timehere = Number(time);
+                console.log(time);
+                $("#timer").html(time + " minutes total on this site"); //home
+                $("#timer2").html(time + " minutes total on this site"); //games
+                $("#timer3").html(time + " minutes total on this site"); //
+                $("#timer4").html(time + " minutes total on this site");
+                $("#timer5").html(time + " minutes total on this site");
+                $("#timer6").html(time + " minutes total on this site");
+                $("#timer7").html(time + " minutes total on this site");
+
+                startTimer();
+            }
+
+            var currentPage = function(num) {
+                page = Number(num);
+            }
+
+            var startTimer = function() {
+
+                setTimeout(function(){
+                    // write pop up function here
+
+                    if(page === 1) {
+                        $("#ourpopup1").click();
+                    }
+
+                    else if (page === 2) {
+                        $("#ourpopup2").click();
+                    }
+
+                    else if (page === 3) {
+                        $("#ourpopup3").click();
+                    }
+
+                    else if (page === 4) {
+                        $("#ourpopup4").click();
+                        
+                    }
+
+                    else if (page === 5) {
+                        $("#ourpopup5").click();
+                    }
+
+                    else if (page === 6) {
+                        $("#ourpopup6").click();
+                    }
+
+                    else if (page === 7) {
+                        $("#ourpopup7").click();
+                    }
+
+                }, 60000 * timehere);
+            }
+            </script>           
     </head>
     <style>
             #pageOne, #pageTwo, #pageThree, #pageFour, #pageFive, #pageSix, 
@@ -21,7 +82,9 @@
     </style>
 
     <body>
- 
+
+
+
         <div data-role="page" id="pageOne">
          
             <div data-role="header">                        
@@ -29,64 +92,41 @@
                 <h2 id = "timer"></h2>
                 <div data-role="navbar">
                     <ul>
-                      <li class="mytab"><a href="#pageOne" class="ui-btn-active ui-state-persist">Home</a></li>
-                      <li class="mytab"><a href="#pageTwo">Games</a></li>
-                      <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                      <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                      <li class="mytab"><a href ="#pageFive">Pictures</a></li>
-                      <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                      <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                      <li class="mytab"><a href="#pageOne" class="ui-btn-active ui-state-persist" onclick="currentPage(1)">Home</a></li>
+                      <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                      <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                      <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                      <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                      <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                      <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
-                
 
 
-            <script>   alert("Dear procrastinator, \nPlease input the amout you would like to procrastinate!"); </script>
-
-         
             <div data-role="content" class="boxarea">
                 <label for="clear-demo"><b>Type in number of minutes you want to procrastinate here:</b></label>
-                <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" placeholder="example: 3">
+                <input type="text" name="clear" id="clear-demo" value="" data-clear-btn="true" placeholder="Example: 3">
                 <input type="button" value="Submit" data-theme="b" onclick="changeTime()">
+
+
+
+
+                <a href="#popupDialog1" data-rel="popup" data-position-to="window" data-transition="pop" id ="ourpopup1"></a>
+
+                <div data-role="popup" id="popupDialog1" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
                 
             </div>
-
-            <script>
-
-                var timehere = 0;
-
-                var changeTime = function(){
-                    var time = $("#clear-demo").val();
-                    timehere = Number(time);
-                    console.log(time);
-                    $("#timer").html(time + " minutes total on this site"); //home
-                    $("#timer2").html(time + " minutes total on this site"); //games
-                    $("#timer3").html(time + " minutes total on this site"); //
-                    $("#timer4").html(time + " minutes total on this site");
-                    $("#timer5").html(time + " minutes total on this site");
-                    $("#timer6").html(time + " minutes total on this site");
-                    $("#timer7").html(time + " minutes total on this site");
-
-                    startTimer();
-                }
-
-                var startTimer = function() {
-                    //var oneMinuteLater = new Date();
-                    //oneMinuteLater.setMinutes(oneMinuteLater.getMinutes() + timehere);
-                    //console.log(oneMinuteLater + "hi");
-                    //console.log(firstTime + "wassup");
-                    //if (oneMinuteLater == Date()){
-                      // alert("Time's up");
-                    //}; // for the things we submit to get in the timer
-                    setTimeout(function(){alert("Your " + timehere + " minute(s) is up!  Get back to work!")}, 60000 * timehere);
-                }
-               
-
-                
-            </script>           
-                       
-        </div><!-- /page -->
+        </div> <!-- end page 1 -->
          
         <div data-role="page" id="pageTwo">
             <div data-role="header">
@@ -94,23 +134,34 @@
                 <h2 id = "timer2"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo" class="ui-btn-active ui-state-persist">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive">Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" class="ui-btn-active ui-state-persist" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="content" class="boxarea">
-                
-                    Directions
-            </div>
-                
-        </div>
+                <a href="#popupDialog2" data-rel="popup" data-position-to="window" data-transition="pop" class="pu" id="ourpopup2"></a>
+
+                <div data-role="popup" id="popupDialog2" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
+                    <b>Fun Games!</b>
+            </div>       
+        </div> <!-- end page 2 -->
 
         <div data-role="page" id="pageThree">
             <div data-role="header">
@@ -118,18 +169,30 @@
                 <h2 id = "timer3"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree"  class="ui-btn-active ui-state-persist">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive">Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree"  class="ui-btn-active ui-state-persist" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="content" class="boxarea">
+                <a href="#popupDialog3" data-rel="popup" data-position-to="window" data-transition="pop" class="pu" id="ourpopup3"></a>
+
+                <div data-role="popup" id="popupDialog3" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
                 <h2><b>Happy Songs!</b></h2>
                 <p><b>I Can't Feel My Face by The Weeknd</b></p>
 
@@ -193,8 +256,7 @@
                 </audio>.
 
             </div>
-        </div>
-
+        </div> <!-- end page 3 -->
 
         <div data-role="page" id="pageFour">
             <div data-role="header">
@@ -202,19 +264,31 @@
                 <h2 id = "timer4"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour"  class="ui-btn-active ui-state-persist">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive">Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour"  class="ui-btn-active ui-state-persist" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="content" class="boxarea">
-                <p>Funny Jokes!</p>
+                <a href="#popupDialog4" data-rel="popup" data-position-to="window" data-transition="pop" id="ourpopup4"></a>
+
+                <div data-role="popup" id="popupDialog4" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
+                <p><b>Funny Jokes!</b></p>
                 <div data-role="collapsible-set">
                     <div data-role="collapsible">
                         <h1><b>Q: What does a nosey pepper do?</b></h1> <p>A: Gets jalapeno business!</p>
@@ -417,7 +491,7 @@
                     </div> 
                 </div>
             </div>          
-        </div>
+        </div> <!-- end page 4 -->
 
         <div data-role="page" id="pageFive">
             <div data-role="header">
@@ -425,25 +499,37 @@
                 <h2 id = "timer5"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive" class="ui-btn-active ui-state-persist">Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" class="ui-btn-active ui-state-persist" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="content" class="boxarea">
-                <p>Funny pictures!</p>
+                <a href="#popupDialog5" data-rel="popup" data-position-to="window" data-transition="pop" id="ourpopup5"></a>
+
+                <div data-role="popup" id="popupDialog5" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
+                <p><b>Funny pictures!</b></p>
                     <div id ="gallery">
                         <img src="bubbles.jpg">
                     </div>
 
             </div> 
-        </div>
+        </div> <!-- end page 5 -->
 
         <div data-role="page" id="pageSix">
 
@@ -452,25 +538,51 @@
                 <h2 id = "timer6"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive" >Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix"class="ui-btn-active ui-state-persist">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix"class="ui-btn-active ui-state-persist" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
             <div data-role="content" class="boxarea">
-                    <p>Fun Facts!</p>
-                    <a href=></a>
-                    <!-- <img src=> 
-                    <img src=>
-                    <img src=> -->
-     
+                <a href="#popupDialog6" data-rel="popup" data-position-to="window" data-transition="pop" id="ourpopup6"></a>
+
+                <div data-role="popup" id="popupDialog6" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
+                    <p><b>A list of fun facts!</b></p>
+                    <!-- option 1 -->
+                    <div data-role="collapsible-set">
+                        <div data-role="collapsible">
+                            <h1><b>Food</b></h1> <p>The reason the taste of artificial banana flavouring and artificial banana flavoured products doesn't taste like bananas is because it is based on a type of banana that was wiped out by a plague in the 1950's.</p>
+                            <p>Pringles once had a lawsuit trying to prove that they weren’t really potato chips.</p>
+                            <p>Pound cake got its name from its original recipe, which called for a pound each of butter, eggs, sugar, and flour.</p>
+                        </div>
+                        <div data-role="collapsible">
+                            <h1><b>Places</b></h1>
+                             <p>Australia has over 10,000 beaches. You could visit a new beach everyday for over 27 years!</p>
+                             <p>The national animal of Scotland is the Unicorn.</p>
+                             <p>The mayor of the Alaskan town, Talkeetna, is called Stubbs and has been mayor of the town since July 1997. Stubbs is a cat.</p>
+                        </div>
+                        <div data-role="collapsible">
+                            <h1><b>Movies/Actors</b></h1>
+                            <p>It was Nicholas Cage who first advised Johnny Depp to pursue a career in acting, during the mid 1980’s.</p>
+                            <p>The directors of the film Despicable Me actually wrote their own language for the Minions called Minionise.</p>
+                        </div>
+                    </div>                 
             </div>
-        </div>
+        </div> <!-- end page 6 -->
 
         <div data-role="page" id="pageSeven">
             <div data-role="header">
@@ -478,21 +590,33 @@
                 <h2 id = "timer7"></h2>
                 <div data-role="navbar">
                     <ul>
-                        <li class="mytab"><a href="#pageOne">Home</a></li>
-                        <li class="mytab"><a href="#pageTwo">Games</a></li>
-                        <li class="mytab"><a href ="#pageThree">Songs</a></li>
-                        <li class="mytab"><a href ="#pageFour">Jokes</a></li>
-                        <li class="mytab"><a href ="#pageFive" >Pictures</a></li>
-                        <li class="mytab"><a href ="#pageSix">Fun Facts</a></li>
-                        <li class="mytab"><a href ="#pageSeven" class="ui-btn-active ui-state-persist">Recepies</a></li>
+                        <li class="mytab"><a href="#pageOne" onclick="currentPage(1)">Home</a></li>
+                        <li class="mytab"><a href="#pageTwo" onclick="currentPage(2)">Games</a></li>
+                        <li class="mytab"><a href ="#pageThree" onclick="currentPage(3)">Songs</a></li>
+                        <li class="mytab"><a href ="#pageFour" onclick="currentPage(4)">Jokes</a></li>
+                        <li class="mytab"><a href ="#pageFive" onclick="currentPage(5)">Pictures</a></li>
+                        <li class="mytab"><a href ="#pageSix" onclick="currentPage(6)">Fun Facts</a></li>
+                        <li class="mytab"><a href ="#pageSeven" class="ui-btn-active ui-state-persist" onclick="currentPage(7)">Recepies</a></li>
                     </ul>
                 </div>
             </div>
 
             <div data-role="content" class="boxarea">
-                    <p>Yummy Recepies!</p>
-                    <a href=></a>
+                    <a href="#popupDialog7" data-rel="popup" data-position-to="window" data-transition="pop" id="ourpopup7"></a>
+
+                <div data-role="popup" id="popupDialog7" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="a">
+                        <h1>Time's up!</h1>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Your procrastination time is up!</h3>
+                        <p>Please get back to work now.</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Okay</a>
+                    </div>
+                </div>
+                    <p><b>Yummy Recepies!</b></p>
+                    <img src="chocochip.jpg">
             </div>
-        </div>
+        </div> <!-- end page 7 -->
     </body>
 </html>
