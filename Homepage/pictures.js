@@ -1,5 +1,5 @@
 var picture = ["cal.jpg","flower.jpg","god.jpg","palmtrees.jpg","smile.jpg","try.jpg",]
-
+$(document).ready(galleryPics);
 function galleryPics(){
 	for (var i = 0; i < picture.length; i++) { 
 		var picture = picture[i];
