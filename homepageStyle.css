@@ -31,6 +31,7 @@ audio {
 	margin-right: 60%;
 	margin-left:60%;
 	vertical-align: right;
+<<<<<<< HEAD
 }
 
 /*#pac {
@@ -39,6 +40,14 @@ audio {
 */
 /*#ice {
 	padding-left: 70px;
+=======
+	float: right;
+    margin: 0 0 10px 10px;
+}
+
+#nah {
+	padding-left: 80px;
+>>>>>>> 838f026941c4be1bcd59562cd26927245edb5fc4
 }
 
 #lol {
@@ -55,4 +64,12 @@ audio {
 
 #hard  {
 	padding-left: 50px;
+<<<<<<< HEAD
 }*/
+
+/*exp
+*/#icon  {
+	padding-left:867px;
+    
+ }/*exp*/
+
