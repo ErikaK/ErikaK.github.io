@@ -31,6 +31,8 @@ audio {
 	margin-right: 60%;
 	margin-left:60%;
 	vertical-align: right;
+	float: right;
+    margin: 0 0 10px 10px;
 }
 
 /*#pac {
@@ -55,4 +57,12 @@ audio {
 
 #hard  {
 	padding-left: 50px;
+<<<<<<< HEAD
 }*/
+
+/*exp
+*/#icon  {
+	padding-left:867px;
+    
+ }/*exp*/
+
