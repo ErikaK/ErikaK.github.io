@@ -4,7 +4,6 @@
         <title>My Page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="homepageStyle.css">
-
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -69,6 +68,8 @@
 
                 }, 60000 * timehere);
             }
+            
+
             </script>           
     </head>
     <style>
@@ -79,6 +80,8 @@
             .boxarea{
                     background: rgba(255, 255, 255, 0.5);
             }
+
+        
     </style>
 
     <body>
@@ -578,7 +581,6 @@
                     </div>
                 </div>
                     <p><b>A list of fun facts!</b></p>
-                    <!-- option 1 -->
                     <div data-role="collapsible-set">
                         <div data-role="collapsible">
                             <h1><b>Food</b></h1> 
@@ -685,8 +687,10 @@
                             <p>18. Seahorses mate for life, and when they travel they hold each others’ tails.</p>
                             <p>19. Before chicks hatch, they can communicate with each other and their mother through a system of sounds.</p>
                             <p>20. Dogs’ nose prints are as unique as human fingerprints and can be used to identify them.</p>
-                        </div>                 
-                    </div>
+                        </div>  <!--close last collapsible-->               
+              
+                    </div> <!--close collapsible-set-->
+            </div> <!--close page 6 box area-->
         </div> <!-- end page 6 -->
 
         <div data-role="page" id="pageSeven">
@@ -722,7 +726,10 @@
                     <p><b>Yummy Recipes!</b></p>
                     
             </div>
-        </div> <!-- end page 7 -->
+
+
+        </div> 
+        <!-- end page 7 -->
 
     </body>
 </html>
