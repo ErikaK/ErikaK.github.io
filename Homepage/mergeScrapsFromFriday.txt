@@ -18,14 +18,13 @@
 
 
 FROM SECOND MERGE CONFLICT
-=======
+
                 
                     Directions
             </div>
                 <a href = "http://www.knowledgeadventure.com/games/pac-man/"><
                 <img src="pacman2.png">
                 </a>
-<<<<<<< HEAD
                 <a href = "http://www.funbrain.com/brain/JustForFunBrain/Games/Game.html?GameName=PenguinDrop&Brain=justforfun&Gender=F&Grade=8&Language=en_us&GameNumber=1&Color=4FB9FF&OldPassword=HUBCAP1&Password=CALF1&HardCoded=false&Roadblock=undefined"><
                 <img src="penguin.png">
                 </a>
