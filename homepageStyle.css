@@ -31,6 +31,9 @@ audio {
 	margin-right: 60%;
 	margin-left:60%;
 	vertical-align: right;
+	
+/*	float: right;
+    margin: 0 0 10px 10px;*/
 }
 
 #nah {
