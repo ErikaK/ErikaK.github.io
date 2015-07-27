@@ -22,10 +22,16 @@ function galleryPics(){
 };
 
 var displayFavePic = function(pic) {
-	var htmlstring = '<div><img src = "' +  pic + '" width=450px height=450px onclick="likepic(\''+ pic +'\')"></div>';
-		$("#favPic").append(htmlstring);
+	var htmlstring = '<img src = "' +  pic + '" width=1000px height=1000px onclick="likepic(\''+ pic +'\')">';
+		$("#favPic").html(htmlstring);
+
 }
+
+
+
 
 //define a function displayFavePic(){
  	//add the pictures1 to the div with id favePic
 //}
+
+
