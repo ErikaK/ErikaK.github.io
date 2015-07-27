@@ -1,0 +1,59 @@
+.ui-btn-inner{
+	/*background: #C2F0FF;*/
+}
+
+audio {
+	width: 100%;
+	vertical-align: middle;
+}
+/*#pageThree{
+	left:50px;
+}*/
+
+.mytab {
+    width: 14.28% !important;  /* 12.5% for 8 tabs wide */
+    clear: none !important;  /* Prevent line break caused by ui-block-a */
+}
+
+#hello {
+	font-size: 300%; 
+	font-family: "Lucida Calligraphy";
+	padding-left:700px;
+}
+
+#sup {
+	font-size: 200%;
+	padding-left:720px;
+}
+
+#favPic{
+	vertical-align: middle;
+	margin-right: 60%;
+	margin-left:60%;
+	vertical-align: right;
+}
+
+#nah {
+	padding-left: 80px;
+}
+
+#lol {
+	padding-left: 50px;
+}
+
+#ah  {
+	padding-left: 20px;
+}
+
+#zombie  {
+	padding-left: 65px;
+}
+
+#hard  {
+	padding-left: 50px;
+}
+/*exp
+*/#icon  {
+	padding-left:867px;
+    
+ }/*exp*/
