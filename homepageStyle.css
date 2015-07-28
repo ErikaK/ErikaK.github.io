@@ -18,7 +18,8 @@ audio {
 #hello {
 	font-size: 300%; 
 	font-family: "Lucida Calligraphy";
-	padding-left:700px;
+	/*padding-left:700px;*/
+	text-align: center;
 }
 
 #sup {
@@ -38,10 +39,6 @@ audio {
 
 }
 
-/*#pac {
-	padding-right: 300px;
-}
-*/
 #ice {
 	padding-left: 70px;
 	float: right;
