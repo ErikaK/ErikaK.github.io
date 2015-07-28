@@ -31,5 +31,24 @@ audio {
 	margin-right: 60%;
 	margin-left:60%;
 	vertical-align: right;
+}
 
+#nah {
+	padding-left: 80px;
+}
+
+#lol {
+	padding-left: 50px;
+}
+
+#ah  {
+	padding-left: 20px;
+}
+
+#zombie  {
+	padding-left: 65px;
+}
+
+#hard  {
+	padding-left: 50px;
 }
