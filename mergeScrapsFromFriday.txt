@@ -1,0 +1,57 @@
+=======
+                
+                    Directions
+            </div>
+                <a href = "http://www.knowledgeadventure.com/games/pac-man/"><
+                <img src="pacman.png">
+                </a>
+                
+                <!-- <a href = "http://www.knowledgeadventure.com/games/belly-bounce/"><
+                <img src="bellybounce.png">
+                </a> -->
+                <!-- <a href = "http://www.knowledgeadventure.com/games/connect-four/"><
+                <img src="connectfour.png">
+                </a> -->
+                
+        </div>
+
+
+
+FROM SECOND MERGE CONFLICT
+
+                
+                    Directions
+            </div>
+                <a href = "http://www.knowledgeadventure.com/games/pac-man/"><
+                <img src="pacman2.png">
+                </a>
+                <a href = "http://www.funbrain.com/brain/JustForFunBrain/Games/Game.html?GameName=PenguinDrop&Brain=justforfun&Gender=F&Grade=8&Language=en_us&GameNumber=1&Color=4FB9FF&OldPassword=HUBCAP1&Password=CALF1&HardCoded=false&Roadblock=undefined"><
+                <img src="penguin.png">
+                </a>
+                <a href = "http://www.miniclip.com/games/8-ball-pool-multiplayer/en/#t-w-c-H"><
+                <img src="pool.png">
+                </a>
+                <a href = "http://www.miniclip.com/games/agar-io/en/#t-g-rg-G"><
+                <img src="agario.png">
+                </a>
+                <a href = "http://www.miniclip.com/games/soccer-stars-mobile/en/"><
+                <img src="soccer.png">
+                </a>
+                <a href = "http://www.miniclip.com/games/mini-pets/en/"><
+                <img src="pets.png">
+                </a>
+                
+                
+                
+=======
+                
+                <!-- <a href = "http://www.knowledgeadventure.com/games/belly-bounce/"><
+                <img src="bellybounce.png">
+                </a> -->
+                <!-- <a href = "http://www.knowledgeadventure.com/games/connect-four/"><
+                <img src="connectfour.png">
+                </a> -->
+>>>>>>> origin/master
+                
+        </div>
+>>>>>>> origin/master
