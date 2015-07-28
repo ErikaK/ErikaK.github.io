@@ -6,9 +6,7 @@ audio {
 	width: 100%;
 	vertical-align: middle;
 }
-/*#pageThree{
-	left:50px;
-}*/
+
 
 .mytab {
     width: 14.28% !important;  /* 12.5% for 8 tabs wide */
@@ -33,9 +31,6 @@ audio {
 	margin-left:60%;
 	vertical-align: right;
 
-	
-/*	float: right;
-    margin: 0 0 10px 10px;*/
 
 }
 
@@ -65,9 +60,9 @@ audio {
 	padding-left: 50px;
 }
 
-/*exp
-*/#icon  {
+
+#icon  {
 	padding-left:861px;
     
- }/*exp*/
+ }
 
