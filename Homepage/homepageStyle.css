@@ -25,3 +25,11 @@ audio {
 	font-size: 200%;
 	padding-left:720px;
 }
+
+#favPic{
+	vertical-align: middle;
+	margin-right: 60%;
+	margin-left:60%;
+	vertical-align: right;
+
+}

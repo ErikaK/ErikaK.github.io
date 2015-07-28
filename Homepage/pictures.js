@@ -1,4 +1,4 @@
-var picBox = ["bubbles.jpg","cal.jpg","flower.jpg","god.jpg","palmtrees.jpg","smile.jpg","try.jpg",]
+var picBox = ["bubbles.jpg","cal.jpg","flower.jpg","god.jpg","palmtrees.jpg","smile.jpg","try.jpg","bike.jpg","beach.jpg","palm2.jpg","city.jpg","red.jpg",]
 
 //define a variable pictures1 in js to hold one favorite pic
 var likepic = function(picSource){
@@ -22,12 +22,10 @@ function galleryPics(){
 };
 
 var displayFavePic = function(pic) {
-	var htmlstring = '<img src = "' +  pic + '" width=1000px height=1000px onclick="likepic(\''+ pic +'\')">';
+	var htmlstring = '<img src = "' +  pic + '" width=700px height=700px onclick="likepic(\''+ pic +'\')">';
 		$("#favPic").html(htmlstring);
 
 }
-
-
 
 
 //define a function displayFavePic(){
